@@ -3,7 +3,7 @@ package com.driver.models;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+
 import java.util.Date;
 import java.util.List;
 
@@ -35,12 +35,20 @@ public class Blog {
         this.content = content;
         this.user = user;
     }
+    public Blog(int blogId, String title, String content, Date publicationDate, User user, List<Image> imageList) {
+        this.blogId = blogId;
+        this.title = title;
+        this.content = content;
+        this.publicationDate = publicationDate;
+        this.user = user;
+        this.imageList = imageList;
+    }
 
-    public int getBlogId() {
+    public int getId() {
         return blogId;
     }
 
-    public void setBlogId(int blogId) {
+    public void setId(int blogId) {
         this.blogId = blogId;
     }
 
@@ -60,11 +68,11 @@ public class Blog {
         this.content = content;
     }
 
-    public Date getPublicationDate() {
+    public Date getPubDate() {
         return publicationDate;
     }
 
-    public void setPublicationDate(Date publicationDate) {
+    public void setPubDate(Date publicationDate) {
         this.publicationDate = publicationDate;
     }
 
@@ -84,12 +92,5 @@ public class Blog {
         this.imageList = imageList;
     }
 
-    public Blog(int blogId, String title, String content, Date publicationDate, User user, List<Image> imageList) {
-        this.blogId = blogId;
-        this.title = title;
-        this.content = content;
-        this.publicationDate = publicationDate;
-        this.user = user;
-        this.imageList = imageList;
-    }
+
 }
